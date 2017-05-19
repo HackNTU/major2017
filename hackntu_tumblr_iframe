@@ -229,7 +229,7 @@
                 <!-- Header -->
                 <!-- <header id="header"> -->
                 <!-- <header id="header" class="top-blog-header"> -->
-                <header id="header" class="top-blog-header" style="height:56.25vw;">
+                <header id="header" class="top-blog-header" style="height:99vh;">
                     {block:ShowHeaderImage}
                     <div class="header-image-wrapper {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}">
                         <a href="/" class="header-image {block:IfSlidingHeader}parallax{/block:IfSlidingHeader} {block:StretchHeaderImage}cover{/block:StretchHeaderImage} {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}" data-bg-image="{HeaderImage}">
@@ -278,8 +278,8 @@ body {
     z-index: 1;
 }
 
-.fullscreen-bg__video {
-    /*border: 1px solid red;*/
+/*Deprecated*/
+.fullscreen-bg__video { 
     position: absolute;
     top: 0;
     left: 0;
@@ -344,15 +344,22 @@ body {
 </style>
 
 <!-- Video -->
-<div class="fullscreen-bg">
+<span>
 
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
-
+    <!-- <span class="fullscreen-bg"> -->
+        <div id="player" class="fullscreen-bg"></div>
+        <iframe id="existing-iframe-example"
+                src="https://www.youtube.com/embed/VrbCEXV-la0?enablejsapi=1&autoplay=1&loop=1&playlist=VrbCEXV-la0&controls=0"
+                frameborder="0"
+                style="border: solid 4px #37474F; position: fixed; top: 0px; bottom: 0px; z-index: -101"
+                class="fullscreen-bg" 
+        ></iframe>        
+    <!-- </span> -->
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
-
+      tag.id = 'iframe-demo';
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -361,10 +368,7 @@ body {
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          frameborder: '0',
+        player = new YT.Player('existing-iframe-example', {
           videoId: 'VrbCEXV-la0',
           playerVars: { 
               'autoplay': 1, 
@@ -391,6 +395,7 @@ body {
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
+          // 連續播放三次後自動停止（23秒*3）
           setTimeout(stopVideo, 69000);
           done = true;
         }
@@ -399,11 +404,7 @@ body {
         player.stopVideo();
       }
     </script>
-  <!--<video loop muted autoplay poster="http://ui.specbee.com/sample/videoframe.jpg" class="fullscreen-bg__video">-->
-    <!--<source src="http://ui.specbee.com/sample/bird.mp4" type="video/mp4"> -->
-    <!-- add .ogv and .webm to cover all compatible devices  -->
-  <!--</video>-->
-</div>
+</span>
 
 <!-- Title & Subtitle -->
 <!-- <div class="home-content">
