@@ -537,6 +537,7 @@ body {
                                         <div class="post-content">
                                             {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             {block:Body}
+                                            <a href="{Permalink}" style="text-decoration: none">
                                             <div class="body-text" style="
                                                 max-height: 15rem;
                                                 overflow: hidden;
@@ -545,7 +546,7 @@ body {
                                                 -webkit-text-fill-color: transparent;
                                                 ">
                                                 {Body}
-                                            </div>
+                                            </div></a>
                                             {/block:Body}
                                         </div>
                                         {/block:Text}
@@ -565,7 +566,7 @@ body {
                                                 -webkit-background-clip: text;
                                                 -webkit-text-fill-color: transparent;
                                                 "> 
-                                                <span class="grad-wrap">{Caption}</span>
+                                                <span class="grad-wrap">{LinkOpenTag}{Caption}{LinkCloseTag}</span>
                                                 
                                             </figcaption>
                                             {/block:Caption}
