@@ -352,9 +352,9 @@ body {
         <iframe id="existing-iframe-example"
                 src="https://www.youtube.com/embed/VrbCEXV-la0?enablejsapi=1&autoplay=1&loop=1&playlist=VrbCEXV-la0&controls=0"
                 frameborder="0"
-                style="border: solid 4px #37474F; position: fixed; top: 0px; bottom: 0px; z-index: -101"
-                class="fullscreen-bg" 
-        ></iframe>        
+                style="position: fixed; top: 0px; bottom: 0px; z-index: -101"
+                class="fullscreen-bg"
+        ></iframe>
     <!-- </span> -->
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -538,16 +538,9 @@ body {
                                         <div class="post-content">
                                             {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             {block:Body}
-                                            <a href="{Permalink}" style="text-decoration: none">
-                                            <div class="body-text" style="
-                                                max-height: 15rem;
-                                                overflow: hidden;
-                                                background: -webkit-linear-gradient(top,#000000 0, #777777 100%);
-                                                -webkit-background-clip: text;
-                                                -webkit-text-fill-color: transparent;
-                                                ">
+                                            <div class="body-text">
                                                 {Body}
-                                            </div></a>
+                                            </div>
                                             {/block:Body}
                                         </div>
                                         {/block:Text}
@@ -556,19 +549,12 @@ body {
                                         <figure class="post-content {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
                                             <div class="photo-wrapper">
                                                 <div class="photo-wrapper-inner">
-                                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+                                                    <a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
                                                 </div>
                                             </div>
                                             {block:Caption}
-                                            <figcaption class="caption" style="
-                                                max-height: 7.5rem;
-                                                overflow: hidden;
-                                                background: -webkit-linear-gradient(top,#000000 0, #777777 100%);
-                                                -webkit-background-clip: text;
-                                                -webkit-text-fill-color: transparent;
-                                                "> 
-                                                <span class="grad-wrap">{LinkOpenTag}{Caption}{LinkCloseTag}</span>
-                                                
+                                            <figcaption class="caption">
+                                                {Caption}
                                             </figcaption>
                                             {/block:Caption}
                                         </figure>
@@ -913,10 +899,24 @@ body {
                                             <div class="post-content">
                                                 {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                 {block:Body}
+                                                <!-- 讓「更多你可能會喜歡的內容」的部分有卡片長度限制（純文字po文） -->
+                                                <a href="{Permalink}" style="text-decoration: none">
+                                                  <div class="body-text" style="
+                                                    max-height: 15rem;
+                                                    overflow: hidden;
+                                                    background: -webkit-linear-gradient(top,#000000 0, #777777 100%);
+                                                    -webkit-background-clip: text;
+                                                    -webkit-text-fill-color: transparent;
+                                                    ">
+                                                  {Body}
+                                                  </div>
+                                                </a>
+                                                {/block:Body}
+                                                <!-- {block:Body}
                                                 <div class="body-text">
                                                     {Body}
                                                 </div>
-                                                {/block:Body}
+                                                {/block:Body} -->
                                             </div>
                                             {/block:Text}
 
@@ -927,11 +927,25 @@ body {
                                                         <a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
                                                     </div>
                                                 </div>
-                                                {block:Caption}
-                                                <figcaption class="caption" style="border:1px solid green">
+                                                <!-- 讓「更多你可能會喜歡的內容」的部分有卡片長度限制（照片po文） -->
+                                                <a href="{Permalink}" style="text-decoration: none">
+                                                  {block:Caption}
+                                                  <figcaption class="caption" style="
+                                                      max-height: 7.5rem;
+                                                      overflow: hidden;
+                                                      background: -webkit-linear-gradient(top,#000000 0, #777777 100%);
+                                                      -webkit-background-clip: text;
+                                                      -webkit-text-fill-color: transparent;
+                                                      ">
+                                                    <span class="grad-wrap">{Caption}</span>
+                                                  </figcaption>
+                                                  {/block:Caption}
+                                                </a>
+                                                <!-- {block:Caption}
+                                                <figcaption class="caption">
                                                     foobar{Caption}
                                                 </figcaption>
-                                                {/block:Caption}
+                                                {/block:Caption} -->
                                             </figure>
                                             {/block:Photo}
 
