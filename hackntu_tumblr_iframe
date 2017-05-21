@@ -538,9 +538,11 @@ body {
                                         <div class="post-content">
                                             {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             {block:Body}
+                                            <a href="{Permalink}" style="text-decoration: none">
                                             <div class="body-text">
                                                 {Body}
                                             </div>
+                                            </a>
                                             {/block:Body}
                                         </div>
                                         {/block:Text}
@@ -553,9 +555,11 @@ body {
                                                 </div>
                                             </div>
                                             {block:Caption}
+                                            <a href="{Permalink}" style="text-decoration: none">
                                             <figcaption class="caption">
                                                 {Caption}
                                             </figcaption>
+                                            </a>
                                             {/block:Caption}
                                         </figure>
                                         {/block:Photo}
