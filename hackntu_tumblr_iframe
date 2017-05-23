@@ -330,7 +330,7 @@ body {
 
 @media (max-width: 767px) {
     .fullscreen-bg {
-        background: url("http://ui.specbee.com/sample/videoframe.jpg") center center/cover no-repeat;
+        background: url("https://raw.githubusercontent.com/HackNTU/major2016/master/img/before-event-banner.jpg") center center/cover no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -394,11 +394,11 @@ body {
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          // 連續播放三次後自動停止（23秒*3）
-          setTimeout(stopVideo, 69000);
-          done = true;
-        }
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //   // 連續播放三次後自動停止（23秒*3）
+        //   setTimeout(stopVideo, 69000);
+        //   done = true;
+        // }
       }
       function stopVideo() {
         player.stopVideo();
