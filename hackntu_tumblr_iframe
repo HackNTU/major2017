@@ -275,7 +275,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.3);
+    /*background: rgba(0, 0, 0, 0.3);*/
+    background: rgba(157, 166, 175, 0.5);
     z-index: 1;
 }
 
@@ -350,6 +351,7 @@ body {
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <!-- <span class="fullscreen-bg"> -->
         <div id="player" class="fullscreen-bg"></div>
+        <div id="video-cover" style="background: white; width: 100vw; height: 100vh"></div>
         <iframe id="existing-iframe-example"
                 src="https://www.youtube.com/embed/VrbCEXV-la0?enablejsapi=1&autoplay=1&loop=1&playlist=VrbCEXV-la0&controls=0"
                 frameborder="0"
@@ -388,6 +390,8 @@ body {
       function onPlayerReady(event) {
         event.target.playVideo();
         player.mute()
+        $("#video-cover").hide()
+        console.log('youtube video is ready')
       }
 
       // 5. The API calls this function when the player's state changes.
