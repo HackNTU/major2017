@@ -230,7 +230,7 @@
                 <!-- Header -->
                 <!-- <header id="header"> -->
                 <!-- <header id="header" class="top-blog-header"> -->
-                <header id="header" class="top-blog-header" style="height:99vh;">
+                <header id="header" class="top-blog-header" style="height:100vh;">
                     {block:ShowHeaderImage}
                     <div class="header-image-wrapper {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}">
                         <a href="/" class="header-image {block:IfSlidingHeader}parallax{/block:IfSlidingHeader} {block:StretchHeaderImage}cover{/block:StretchHeaderImage} {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}" data-bg-image="{HeaderImage}">
@@ -343,6 +343,19 @@ body {
         display: none;
     }
 }
+
+.no-image #header {
+    padding: 0px;
+}
+
+#yideo iframe{
+    width: 140vw !important;
+    height: 120vmax !important;
+    margin-left: -20vw;
+    margin-top: -20vmax;
+    min-height: 1400px;
+    min-width: 2000px;
+}
 </style>
 
 <!-- Video -->
@@ -350,14 +363,17 @@ body {
 
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <!-- <span class="fullscreen-bg"> -->
-        <div id="player" class="fullscreen-bg"></div>
+        <div id="player" class="fullscreen-bg">
         <div id="video-cover" style="background: white; width: 100vw; height: 100vh"></div>
+        <div id="yideo">
         <iframe id="existing-iframe-example"
-                src="https://www.youtube.com/embed/VrbCEXV-la0?enablejsapi=1&autoplay=1&loop=1&playlist=VrbCEXV-la0&controls=0"
+                src="https://www.youtube.com/embed/VrbCEXV-la0?enablejsapi=1&autoplay=1&loop=1&playlist=VrbCEXV-la0&controls=0&showinfo=0&disablekb=1&rel=0"
                 frameborder="0"
-                style="position: fixed; top: 0px; bottom: 0px; z-index: -101"
                 class="fullscreen-bg"
         ></iframe>
+        </div>
+        </div>
+        <!-- [Youtube Parameters](https://developers.google.com/youtube/player_parameters) -->
     <!-- </span> -->
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
