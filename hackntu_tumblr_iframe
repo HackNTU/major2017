@@ -352,8 +352,8 @@ body {
     width: 140vw !important;
     height: 120vmax !important;
     margin-left: -20vw;
-    margin-top: -20vmax;
-    min-height: 1400px;
+    margin-top: -400px;
+    min-height: 1800px;
     min-width: 2000px;
 }
 </style>
