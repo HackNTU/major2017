@@ -192,7 +192,7 @@
             </div>
         </div>
 
-        
+
         <section id="page">
 
             <!-- ###################### -->
@@ -220,7 +220,7 @@
 
             <!-- ###################### -->
             <!-- ##  ## -->
-            <!-- ##################### -->            
+            <!-- ##################### -->
             <div class="header-wrapper
                 {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}
                 {block:HideHeaderImage}no-image {/block:HideHeaderImage}
@@ -281,7 +281,7 @@ body {
 }
 
 /*Deprecated*/
-.fullscreen-bg__video { 
+.fullscreen-bg__video {
     position: absolute;
     top: 0;
     left: 0;
@@ -389,8 +389,8 @@ body {
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('existing-iframe-example', {
           videoId: 'VrbCEXV-la0',
-          playerVars: { 
-              'autoplay': 1, 
+          playerVars: {
+              'autoplay': 1,
               'controls': 0,
               'loop': 1,
               'playlist': 'VrbCEXV-la0'
@@ -406,7 +406,7 @@ body {
       function onPlayerReady(event) {
         event.target.playVideo();
         player.mute()
-        $("#video-cover").hide()
+        // $("#video-cover").hide()
         console.log('youtube video is ready')
       }
 
@@ -415,11 +415,13 @@ body {
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        // if (event.data == YT.PlayerState.PLAYING && !done) {
-        //   // 連續播放三次後自動停止（23秒*3）
-        //   setTimeout(stopVideo, 69000);
-        //   done = true;
-        // }
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          $("#video-cover").hide()
+          console.log('*** Hide()');
+        } else {
+          $("#video-cover").show()
+          console.log('*** Show()');
+        }
       }
       function stopVideo() {
         player.stopVideo();
@@ -457,7 +459,7 @@ body {
                             {block:IfShowNavigation}
                                 <div class="{block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}nav-wrapper content">
                                     <nav class="nav-menu">
-                                        
+
                                         <!-- <ul class="inline-nav">
                                             {block:HasPages}
                                                 {block:Pages}
@@ -490,7 +492,7 @@ body {
                                                 <a href="/archive123" class="label">{lang:Archive}</a>
                                             </li>
                                         </ul> -->
-                                        
+
                                         <ul class="inline-nav">
                                             <li class="nav-item" style="display:none;">
                                                 <a href="/tagged/測試" class="label">測試</a>
