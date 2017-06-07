@@ -1,8 +1,10 @@
 <template>
   <div id="app">
+    <logo></logo>
   </div>
 </template>
 <script>
+import Logo from '@/components/logo.vue'
 export default {
   name: 'app',
   data() {
@@ -47,6 +49,9 @@ export default {
         type: 'image/png'
       },
     ],
+  },
+  components: {
+    Logo,
   },
 }
 </script>
