@@ -1,29 +1,27 @@
 <template>
   <div id="logo">
+    <tag-nav class="nav-top"></tag-nav>
     <img src="~@/assets/logo/logo-wb.png" alt="">
     <div id="title">
       <h2 class="en"> 2017HackNTU </h2>
       <h2 class="zh"> 臺大黑客松 </h2>
     </div>
-    <div id="nav">
-      <ul>
-        <li>會前活動</li>
-        <li>活動介紹</li>
-        <li>專欄採訪</li>
-        <li>新聞媒體</li>
-        <li>訊息分享</li>
-      </ul>
-    </div>
+    <tag-nav class="nav-bottom"></tag-nav>
   </div>
 </template>
 <script>
+import tagNav from '@/components/tagNav.vue'
+
 export default {
   name: 'logo',
   data() {
     return {
       msg: 'Welcome!',
     }
-  }
+  },
+  components: {
+    tagNav,
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -33,7 +31,7 @@ export default {
     width: 180px;
   }
   position: absolute;
-  margin-top: 20%;
+  margin-top: 10%;
   width: 100%;
 }
 
@@ -53,32 +51,20 @@ export default {
   }
 }
 
-#nav {
-  margin-top: 10px;
-  ul {
-    padding: 0px;
-  }
-  li {
-    display: inline-block;
-    font-size: 16px;
-    margin: 0px 6px;
-    cursor: pointer;
-    &:after {
-      content: "";
-      // position: absolute;
-      display: block;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #000;
-      visibility: hidden;
-      transform: scaleX(0);
-      transition: all 0.3s ease-in-out 0s;
+// @media style
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+.nav {
+  &-top {
+    @media #{$desktop} {
+      display: none;
     }
-    &:hover:after {
-      visibility: visible;
-      transform: scaleX(1);
+  }
+  &-bottom {
+    @media #{$tablet},
+    #{$mobile} {
+      display: none;
     }
   }
 }
