@@ -16,7 +16,7 @@ new Vue({
 /*----------  js control  ----------*/
 
 // lock screen orientation
-screen.lockOrientation('portrait');
+// screen.lockOrientation('portrait'); // it's not work...
 
 
 /*----------  events  ----------*/
