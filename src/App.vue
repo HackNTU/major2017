@@ -1,21 +1,39 @@
 <template>
   <div id="app">
+    <load v-if="!finish" :loaded="loaded"></load>
     <tag-nav class="nav nav-top"></tag-nav>
     <logo></logo>
     <tag-nav class="nav nav-bottom"></tag-nav>
-    <cover></cover>
+    <cover v-if="cover"></cover>
   </div>
 </template>
 <script>
 import Logo from '@/components/logo.vue'
 import TagNav from '@/components/tagNav.vue'
 import Cover from '@/components/cover.vue'
+import Load from '@/components/load.vue'
+
 
 export default {
   name: 'app',
+  created() {
+    setTimeout(() => {
+      this.cover = true
+    }, 700)
+    setTimeout(() => {
+      this.loaded = true
+    }, 900)
+    setTimeout(() => {
+      this.finish = true
+    }, 1100)
+
+  },
   data() {
     return {
-      msg: 'Welcome!'
+      msg: 'Welcome!',
+      cover: false,
+      loaded: false,
+      finish: false,
     }
   },
   head: {
@@ -60,6 +78,7 @@ export default {
     Logo,
     TagNav,
     Cover,
+    Load,
   },
 }
 </script>
