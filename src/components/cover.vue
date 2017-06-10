@@ -123,7 +123,7 @@ function d3_init(el) {
       d3.select(this)
         .selectAll('text')
         .transition()
-        .style('opacity', 1)
+        .style('opacity', 0.6)
 
     })
 
@@ -134,23 +134,28 @@ function d3_init(el) {
     .attr('cy', centerY)
     // .attr('fill', 'white')
     .attr('fill', (d, i) => color(i))
-    .style('opacity', 0.03)
+    .style('opacity', 0.08)
     .attr('stroke', 'gray')
     .attr('stroke-opacity', 0)
     // .attr('stroke-width', 2)
 
 
+  function textAttr(t) {
+    t.attr('fill', (d, i) => color(i))
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 14)
+      .style('opacity', 0)
+  }
 
-  let texts = nodes
+  let textsZh = nodes
     .append('text')
-    .attr('dx', -20)
-    .style('color', 'red')
     .text((d) => d.zh)
-    .attr('dx', (d) => d.cx)
-    .attr('dy', (d) => d.cy)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', 14)
-    .style('opacity', 0)
+    .call(textAttr)
+
+  let textsEn = nodes
+    .append('text')
+    .text((d) => d.en)
+    .call(textAttr)
 
 
 
@@ -158,7 +163,8 @@ function d3_init(el) {
     .forceSimulation()
     .nodes(data)
     .force('charge', d3.forceManyBody()
-      .strength((d, i) => i === 0 ? (-3000) : (width * -2))
+      .strength((d, i) => i === 0 ? (-5.5 * height) : (width * -2))
+      // .strength((d, i) => i === 0 ? (-3000) : (width * -2))
       // .strength(height * -1.5)
       // .strength(-2000)
       // .distanceMax(1000)
@@ -176,13 +182,21 @@ function d3_init(el) {
 
     resetCenter()
 
+    // center
+    //   .attr('x', centerX)
+    //   .attr('y', centerY)
+
     circles
       .attr('cx', (d) => d.x)
       .attr('cy', (d) => d.y)
 
-    texts
+    textsZh
       .attr('dx', (d) => d.x)
-      .attr('dy', (d) => d.y)
+      .attr('dy', (d) => d.y - 10)
+
+    textsEn
+      .attr('dx', (d) => d.x)
+      .attr('dy', (d) => d.y + 10)
 
   }
 
