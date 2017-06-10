@@ -26,7 +26,9 @@ export default {
   }
   position: absolute;
   margin-top: calc(50vh - 190px);
-  width: 100%;
+  left: 50vw;
+  margin-left: -90px;
+  // width: 100%;
 }
 
 #title {

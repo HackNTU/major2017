@@ -3,11 +3,13 @@
     <tag-nav class="nav nav-top"></tag-nav>
     <logo></logo>
     <tag-nav class="nav nav-bottom"></tag-nav>
+    <cover></cover>
   </div>
 </template>
 <script>
 import Logo from '@/components/logo.vue'
 import TagNav from '@/components/tagNav.vue'
+import Cover from '@/components/cover.vue'
 
 export default {
   name: 'app',
@@ -57,6 +59,7 @@ export default {
   components: {
     Logo,
     TagNav,
+    Cover,
   },
 }
 </script>
@@ -67,6 +70,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  // top: 0;
+  // bottom: 0;
 }
 
 a {
