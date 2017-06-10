@@ -123,7 +123,7 @@ function d3_init(el) {
       d3.select(this)
         .selectAll('text')
         .transition()
-        .style('opacity', 0.6)
+        .style('opacity', 0.4)
 
     })
 
@@ -163,7 +163,7 @@ function d3_init(el) {
     .forceSimulation()
     .nodes(data)
     .force('charge', d3.forceManyBody()
-      .strength((d, i) => i === 0 ? (-5.5 * height) : (width * -2))
+      .strength((d, i) => i === 0 ? (-5 * height) : (width * -2))
       // .strength((d, i) => i === 0 ? (-3000) : (width * -2))
       // .strength(height * -1.5)
       // .strength(-2000)

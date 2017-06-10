@@ -42,9 +42,13 @@ export default {
   }
   .en {
     font-family: initial;
+    letter-spacing: 1.2px;
   }
   .zh {
-    font-family: cursive;
+    // font-family: cursive;
+    font-family: monospace;
+    font-size: 1.8em;
+    letter-spacing: 1px;
   }
 }
 </style>
