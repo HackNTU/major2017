@@ -21,7 +21,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 #tag-nav {
-  margin-top: 10px;
   ul {
     padding: 0px;
   }
@@ -53,9 +52,9 @@ export default {
   $tablet: "(min-width: 768px) and (max-width: 1023px)";
   $desktop: "(min-width: 1024px)";
   li {
-    @media #{$tablet},
-    #{$mobile} {
+    @media #{$mobile} {
       font-size: 12px;
+      margin: 0px 3px;
     }
   }
 }

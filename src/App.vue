@@ -1,10 +1,14 @@
 <template>
   <div id="app">
+    <tag-nav class="nav nav-top"></tag-nav>
     <logo></logo>
+    <tag-nav class="nav nav-bottom"></tag-nav>
   </div>
 </template>
 <script>
 import Logo from '@/components/logo.vue'
+import TagNav from '@/components/tagNav.vue'
+
 export default {
   name: 'app',
   data() {
@@ -52,6 +56,7 @@ export default {
   },
   components: {
     Logo,
+    TagNav,
   },
 }
 </script>
@@ -66,5 +71,26 @@ export default {
 
 a {
   color: #42b983;
+}
+
+// @media style
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+.nav {
+  position: relative;
+  &-top {
+    top: calc(50vh - 200px);
+    @media #{$desktop},
+    #{$tablet} {
+      display: none;
+    }
+  }
+  &-bottom {
+    top: calc(50vh + 100px);
+    @media #{$mobile} {
+      display: none;
+    }
+  }
 }
 </style>
