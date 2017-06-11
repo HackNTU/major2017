@@ -5,6 +5,7 @@
 </template>
 <script>
 import * as d3 from 'd3'
+import _ from 'lodash'
 
 export default {
   name: 'cover',
@@ -24,10 +25,7 @@ export default {
 ============================*/
 
 
-const data = [{
-  zh: '中心',
-  en: '（Center）'
-}, {
+let data = _.shuffle([{
   zh: '資訊安全',
   en: '（Information Security）'
 }, {
@@ -72,7 +70,14 @@ const data = [{
 }, {
   zh: '金融',
   en: '（Finance）'
-}, ]
+}, ])
+
+data.unshift({
+  zh: '中心',
+  en: '（Center）'
+})
+
+// console.log('data', data)
 
 /*=====  End of Data  ======*/
 
