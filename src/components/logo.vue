@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <img src="~@/assets/logo/logo-wb.png" alt="">
+    <img src="~@/assets/logo/logo-wb-m.png" alt="">
     <div id="title">
       <h2 class="en"> 2017HackNTU </h2>
       <h2 class="zh"> 臺大黑客松 </h2>

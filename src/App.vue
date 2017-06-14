@@ -56,7 +56,7 @@ export default {
         content: '7/21-23 (花博公園爭艷館)，三天Hacking不間斷！'
       }, {
         property: 'og:image',
-        content: './src/assets/logo/banner.jpg'
+        content: '@/assets/preview.png'
       },
     ],
     link: [
