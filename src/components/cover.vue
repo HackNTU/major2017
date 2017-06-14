@@ -121,13 +121,17 @@ function d3_init(el) {
       d3.select(this)
         .selectAll('circle')
         .transition()
+        // .duration(300)
+        // .ease(d3.easeBackIn, 4)
         .attr('r', 100)
         .attr('stroke-dasharray', 18, 2)
+        .style('opacity', 0.03)
 
 
       d3.select(this)
         .selectAll('text')
         .transition()
+        // .duration(500)
         .style('opacity', 0.4)
 
     })
