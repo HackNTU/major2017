@@ -28,8 +28,8 @@ export default {
         zh: '我要報名',
         en: 'sign-up',
       }, {
-        zh: '關於我們',
-        en: 'about',
+        zh: '合作單位',
+        en: 'partner',
       }],
     }
   }
