@@ -227,7 +227,7 @@
                 <header id="header" class="top-blog-header">
                     {block:ShowHeaderImage}
                     <div class="header-image-wrapper {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}">
-                        <a href="/" class="header-image {block:IfSlidingHeader}parallax{/block:IfSlidingHeader} {block:StretchHeaderImage}cover{/block:StretchHeaderImage} {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}" data-bg-image="{HeaderImage}">
+                        <a href="http://major.hackntu.taipei/" class="header-image {block:IfSlidingHeader}parallax{/block:IfSlidingHeader} {block:StretchHeaderImage}cover{/block:StretchHeaderImage} {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}" data-bg-image="{HeaderImage}">
                             {block:NoStretchHeaderImage}
                             <img src="{HeaderImage}" alt="">
                             {/block:NoStretchHeaderImage}
@@ -238,12 +238,12 @@
 
                     <div class="blog-title-wrapper content">
                         <figure class="avatar-wrapper{block:IndexPage} animate{/block:IndexPage}">
-                            <a href="/" style="background-image: url({PortraitURL-128})" class="user-avatar"><img src="{PortraitURL-128}" alt="" class="print-only invisible"></a>
+                            <a href="http://major.hackntu.taipei/" style="background-image: url({PortraitURL-128})" class="user-avatar"><img src="{PortraitURL-128}" alt="" class="print-only invisible"></a>
                         </figure>
 
                         <div class="title-group{block:IndexPage} animate{/block:IndexPage}">
                             {block:ShowTitle}
-                            <h1 class="blog-title"><a href="/">{Title}</a></h1>
+                            <h1 class="blog-title"><a href="http://major.hackntu.taipei/">{Title}</a></h1>
                             {/block:ShowTitle}
                             {block:ShowDescription}
                             <span class="description">
