@@ -7,15 +7,22 @@ h2 * {
 }
 
 article:not(.exposed) .body-text {
-  > *:nth-child(1n + 3) {
-    display: none;
-  }
-  > *:nth-child(2):after {
-    content: ' 點擊標題看更多 ...';
-    display: block;
-    color: #210b41;
-    margin-top: 20px;
+  // > *:nth-child(1n + 3) {
+  //   display: none;
+  // }
+  // > *:nth-child(2):after {
+  //   content: ' 點擊標題看更多 ...';
+  //   display: block;
+  //   color: #210b41;
+  //   margin-top: 20px;
+  //   font-size: 0.6em;
+  // }
+  .read_more_container {
     font-size: 0.6em;
+    color: #210b41;
+    &:after {
+      content: ' ...';
+    }
   }
 }
 
