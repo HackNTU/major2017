@@ -17,7 +17,7 @@ export default {
       msg: 'Welcome!',
       tags: [{
         zh: '會前活動',
-        en: 'pre-event',
+        en: 'pre',
       }, {
         zh: '活動介紹',
         en: 'intro',
@@ -26,7 +26,7 @@ export default {
         en: 'interview',
       }, {
         zh: '我要報名',
-        en: 'sign-up',
+        en: 'sign',
       }, {
         zh: '合作單位',
         en: 'partner',

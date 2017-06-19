@@ -294,7 +294,7 @@
                             </li>
                             -->
                             <li class="nav-item">
-                                <a href="/tagged/per-event" class="label">會前活動</a>
+                                <a href="/tagged/pre" class="label">會前活動</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/tagged/intro" class="label">活動介紹</a>
@@ -303,7 +303,7 @@
                                 <a href="/tagged/interview" class="label">專欄採訪</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/tagged/sign-up" class="label">我要報名</a>
+                                <a href="/tagged/sign" class="label">我要報名</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/tagged/partner" class="label">合作單位</a>
