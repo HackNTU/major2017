@@ -52,6 +52,7 @@ function d3_init(el) {
       .duration(d)
       .ease(d3.easeBounceOut, 1)
       .attr('cy', centerY)
+      // .attr('transform', 'scale(1, 0.7)')
       .transition()
       .duration(200)
       .attr('opacity', 0.1)
