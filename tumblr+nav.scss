@@ -2,27 +2,42 @@
 // text not-page post-161662731145 masonry-brick
 // single
 // text not-page post-161662731145 active exposed 
+// 
+// @media style
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+// 
 h2 * {
   font-size: 0.8em;
 }
 
-article:not(.exposed) .body-text {
-  // > *:nth-child(1n + 3) {
-  //   display: none;
-  // }
-  // > *:nth-child(2):after {
-  //   content: ' 點擊標題看更多 ...';
-  //   display: block;
-  //   color: #210b41;
-  //   margin-top: 20px;
-  //   font-size: 0.6em;
-  // }
-  .read_more_container {
-    font-size: 0.6em;
-    color: #210b41;
-    &:after {
-      content: ' ...';
+article {
+  &:not(.exposed) .body-text {
+    // > *:nth-child(1n + 3) {
+    //   display: none;
+    // }
+    // > *:nth-child(2):after {
+    //   content: ' 點擊標題看更多 ...';
+    //   display: block;
+    //   color: #210b41;
+    //   margin-top: 20px;
+    //   font-size: 0.6em;
+    // }
+    .read_more_container {
+      font-size: 0.6em;
+      color: #210b41;
+      &:after {
+        content: ' ...';
+      }
     }
+  }
+}
+
+.main {
+  @media #{$desktop},
+  #{$tablet} {
+    max-width: 60vw !important;
   }
 }
 
@@ -53,10 +68,6 @@ article:not(.exposed) .body-text {
       transform: scaleX(1);
     }
   }
-  // @media style
-  $mobile: "(max-width: 767px)";
-  $tablet: "(min-width: 768px) and (max-width: 1023px)";
-  $desktop: "(min-width: 1024px)";
   li {
     @media #{$mobile} {
       margin: 10px 3.5px !important;
