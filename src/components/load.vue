@@ -64,7 +64,7 @@ function d3_init(el) {
 
 
   ballg
-    .call(ballTransition, 1200)
+    .call(ballTransition, 1100)
 
 
   function resetCenter() {
